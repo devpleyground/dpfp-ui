@@ -1,29 +1,23 @@
-import React, { useEffect, useState } from "react";
-import { sempleCheckApi } from "../../apis/exampleApis";
+import React from "react";
 import * as S from './style';
+import {useQuery} from "react-query";
+import {exampleCheck, exampleError} from "../../apis/exampleApi";
 
 const Semple = () => {
 
-  const [date, setDate] = useState(null);
+  const check =  useQuery('check', exampleCheck);
+  const error =  useQuery('error', exampleError);
 
-  useEffect( () => {
-    getSempleCheck()
-  },[])
-
-  const getSempleCheck = async () => {
-    try {
-      const date = await sempleCheckApi();
-      setDate(date);
-    } catch (e) {
-
-    }
-  }
-
-  return (
-    <>
-      <S.Title>innople devpleyground</S.Title>
-      <S.Content>semple-check : {date}</S.Content>
-    </>
+  return(
+      <>
+        { check.isLoading && 'examples/check : Loading...' }
+        { check.error && <S.Error>'examples/check : An error has occurred: ' + check.error.message</S.Error> }
+        { check.data && <S.Success>examples/check : {check.data}</S.Success> }
+        <br/>
+        { error.isLoading && 'examples/errormsg : Loading...' }
+        { error.error && <S.Error>'examples/errormsg : An error has occurred: ' + {error.error.message}</S.Error> }
+        { error.data && <S.Success>examples/errormsg : {error.data}</S.Success> }
+      </>
   )
 }
 
