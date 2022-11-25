@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { sempleCheckApi } from "../../apis/exampleApis";
-import styled from "styled-components";
+import * as S from './style';
 
 const Semple = () => {
-
-  const StyledDiv = styled.div`
-    color: blue;
-    font-size: 2em; 
-  `;
 
   const [date, setDate] = useState(null);
 
@@ -26,8 +21,8 @@ const Semple = () => {
 
   return (
     <>
-      semple-check : {date}
-      <StyledDiv>styled contents</StyledDiv>
+      <S.Title>innople devpleyground</S.Title>
+      <S.Content>semple-check : {date}</S.Content>
     </>
   )
 }
