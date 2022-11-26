@@ -8,6 +8,7 @@ export function exampleCheck(){
 
 export function exampleError(){
     const url = `${globals.base_url}/examples/errormsg`
-    return axios.get(url).then(response => response.data)
+    return axios.get(url)
+        .then(response => response.data)
 }
 

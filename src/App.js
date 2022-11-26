@@ -2,14 +2,30 @@ import GlobalStyles from "./styles/GlobalStyles";
 import { ThemeProvider } from "styled-components";
 import theme from "./styles/theme";
 import Router from "./Router";
+import {useApiError} from "./hooks/common/error/useApiError";
+import {QueryClient, QueryClientProvider} from "react-query";
 
 function App() {
+
+    const { handleError } = useApiError();
+
+    const queryClient = new QueryClient({
+        defaultOptions: {
+            queries: {
+                retry: 0,
+                onError: err => handleError(err),
+            },
+        }
+    });
+
     return (
         <>
-            <ThemeProvider theme={theme}>
-                <GlobalStyles/>
-                <Router />
-            </ThemeProvider>
+            <QueryClientProvider client={queryClient}>
+                <ThemeProvider theme={theme}>
+                    <GlobalStyles/>
+                    <Router/>
+                </ThemeProvider>
+            </QueryClientProvider>
         </>
     );
 }

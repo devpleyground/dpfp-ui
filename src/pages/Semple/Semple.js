@@ -10,13 +10,13 @@ const Semple = () => {
 
   return(
       <>
-        { check.isLoading && 'examples/check : Loading...' }
-        { check.error && <S.Error>'examples/check : An error has occurred: ' + check.error.message</S.Error> }
-        { check.data && <S.Success>examples/check : {check.data}</S.Success> }
+        { check.isLoading && '🕛 examples/check : Loading...' }
+        { check.error && <S.Error> 🚫 examples/check : An error has occurred:  + check.error.message</S.Error> }
+        { check.data && <S.Success> 🚀 examples/check : {check.data}</S.Success> }
         <br/>
-        { error.isLoading && 'examples/errormsg : Loading...' }
-        { error.error && <S.Error>'examples/errormsg : An error has occurred: ' + {error.error.message}</S.Error> }
-        { error.data && <S.Success>examples/errormsg : {error.data}</S.Success> }
+        { error.isLoading && '🕛 examples/errormsg : Loading...' }
+        { error.error && <S.Error> 🚫 examples/errormsg : An error has occurred:  + {error.error.message}</S.Error> }
+        { error.data && <S.Success> 🚀 examples/errormsg : {error.data}</S.Success> }
       </>
   )
 }
