@@ -19,15 +19,15 @@ export const useApiError = (handlers) => {
 
     const handleError = useCallback((error) => {
 
-        const httpStatus = error.response.status;
-        const serviceCode = error.response.code;
+        const httpStatus = error.response?.status;
+        const serviceCode = error.response?.code;
 
         switch(true) {
-            case defaultHandlers[httpStatus][serviceCode] && true:
+            case httpStatus && serviceCode && true :
                 defaultHandlers[httpStatus][serviceCode]();
                 break;
 
-            case defaultHandlers[httpStatus] && true:
+            case httpStatus && true:
                 defaultHandlers[httpStatus].default();
                 break;
 
