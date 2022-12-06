@@ -1,7 +1,7 @@
 import React from "react";
-import * as S from './style';
 import {useQuery} from "react-query";
 import {exampleCheck, exampleError} from "../../apis/exampleApi";
+import {Error, Success} from "./style";
 
 const Semple = () => {
 
@@ -11,12 +11,12 @@ const Semple = () => {
   return(
       <>
         { check.isLoading && '🕛 examples/check : Loading...' }
-        { check.error && <S.Error> 🚫 examples/check : An error has occurred:  + check.error.message</S.Error> }
-        { check.data && <S.Success> 🚀 examples/check : {check.data}</S.Success> }
+        { check.error && <Error> 🚫 examples/check : An error has occurred:  + check.error.message</Error> }
+        { check.data && <Success> 🚀 examples/check : {check.data}</Success> }
         <br/>
         { error.isLoading && '🕛 examples/errormsg : Loading...' }
-        { error.error && <S.Error> 🚫 examples/errormsg : An error has occurred:  + {error.error.message}</S.Error> }
-        { error.data && <S.Success> 🚀 examples/errormsg : {error.data}</S.Success> }
+        { error.error && <Error> 🚫 examples/errormsg : An error has occurred:  + {error.error.message}</Error> }
+        { error.data && <Success> 🚀 examples/errormsg : {error.data}</Success> }
       </>
   )
 }

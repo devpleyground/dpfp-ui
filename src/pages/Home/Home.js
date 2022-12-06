@@ -1,10 +1,10 @@
 import React from "react";
-import * as S from './style';
+import {Title} from "./style";
 
 const Home = () => {
   return (
     <>
-        <S.Title>innople devpleyground</S.Title>
+        <Title>innople devpleyground</Title>
         {/*deploy_type : {process.env.REACT_APP_DEPLOY_TYPE}*/}
     </>
   )

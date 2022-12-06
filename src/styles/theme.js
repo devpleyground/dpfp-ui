@@ -7,7 +7,9 @@ const fontColor = {
 }
 
 const theme = {
-    fontColor
+    fontColor,
+    backDropColor: "#fafafa",
+    backGroundColor: "#ffffff"
 }
 
 export default theme
