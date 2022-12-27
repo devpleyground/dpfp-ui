@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import Header from "./Header/Header";
-import {Frame} from "./style";
 import theme from "../../styles/theme";
+import * as S from "./style";
 
 const Layout = ({children}) => {
     useEffect(() => {
@@ -9,10 +9,10 @@ const Layout = ({children}) => {
     });
 
   return (
-    <Frame>
+    <S.Frame>
       <Header />
-      {children}
-    </Frame>
+        {children}
+    </S.Frame>
   )
 }
 export default Layout;

@@ -24,7 +24,7 @@ const MenuItem = (props) => {
                 <S.MenuIcon>
                     { current ? selectedIcon.render() : defaultIcon.render() }
                 </S.MenuIcon>
-                <S.MenuName>{name}</S.MenuName>
+                {/*<S.MenuName>{name}</S.MenuName>*/}
             </S.MenuItem>
         </S.MenuLink>
     )

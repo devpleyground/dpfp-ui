@@ -11,7 +11,6 @@ const MenuList = () => {
             <MenuItem id = "menu1" name = "메뉴1" link = "/semple" defaultIcon = { UpCircleOutlined } selectedIcon = { UpCircleFilled } />
             <MenuItem id = "menu2" name = "메뉴2" link = "/menu02" defaultIcon = { UpCircleOutlined } selectedIcon = { UpCircleFilled } />
             <MenuItem id = "menu3" name = "메뉴3" link = "/menu03" defaultIcon = { UpCircleOutlined } selectedIcon = { UpCircleFilled } />
-            <MenuItem id = "menu4" name = "메뉴4" link = "/menu04" defaultIcon = { UpCircleOutlined } selectedIcon = { UpCircleFilled } />
         </S.MenuList>
     )
 }

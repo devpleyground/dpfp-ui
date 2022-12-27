@@ -13,3 +13,9 @@ export function exampleError(){
         .then(response => response.data);
 }
 
+export function exampleList(){
+    const url = `${globals.base_url}/examples/list`
+    return axios.get(url)
+        .then(response => response.data);
+}
+

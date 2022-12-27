@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { Link } from 'react-router-dom';
 
 export const Header = styled.div`
+  position: sticky;
+  top: 0;
   width: auto;
   padding: 10px;
   background-color: rgba(252, 252, 252, 0.83);
