@@ -2,6 +2,7 @@
 
 const fontColor = {
     dpfpBasic: "#1859FF",
+    grayBasic: "#707070",
     success: "#4BB543",
     fail: "#FA113D",
 }

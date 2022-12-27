@@ -4,6 +4,7 @@ import theme from "./styles/theme";
 import Router from "./Router";
 import {useApiError} from "./hooks/common/error/useApiError";
 import {QueryClient, QueryClientProvider} from "react-query";
+import {RecoilRoot} from "recoil";
 
 function App() {
 
@@ -22,8 +23,10 @@ function App() {
         <>
             <QueryClientProvider client={queryClient}>
                 <ThemeProvider theme={theme}>
-                    <GlobalStyles/>
-                    <Router/>
+                    <RecoilRoot>
+                        <GlobalStyles/>
+                        <Router/>
+                    </RecoilRoot>
                 </ThemeProvider>
             </QueryClientProvider>
         </>
